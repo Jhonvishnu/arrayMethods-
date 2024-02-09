@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script</title>
+</head>
+<body>
+    <div id="demo"></div>
+    <br>
+    <div id="demo1"></div>
+    <div id="demo2"></div>
+    <div id="demo3"></div>
+    <div id="demo4"></div>
+    
+</body>
+<script>
+// part 1
+// forEach()
+/* Iterates over an array of elements. 
+It accepts a callback function that executes for each array element and is a neat approach to array traversal*/
+
+/*const array =[ 1, 2, 3, 4];
+array.forEach(element =>{
+//perform operation on each element
+});*/
+
+//Examples
+let text = "";
+const fruits = ["apple", "orange", "cherry"];
+fruits.forEach(myFunction);
+
+document.getElementById("demo").innerHTML = text;
+ 
+function myFunction(item, index) {
+  text += (index +1) + ": " + item + "<br>"; 
+}
+
+//map()
+//Creates a new array by applying a provided function to each element in the orginal array.
+const numbers = [ 1, 2, 3, 4];
+const doubledNumbers = numbers.map(function (num){
+    return num * 2;
+})
+
+document.getElementById("demo1").innerHTML = doubledNumbers;
+
+//filter()
+// Creates a new array containing only elements that satisfy a certain condition. It doesn't modify the orginal array; instead,, it returns a new array that includes only the elements for which the provided function return true.
+
+const number1 = [ 1, 2, 3, 4, 5, 6];
+const evenumbers = number1.filter(function (num){
+    return num % 2 === 0;
+    // return num > 2;
+
+});
+
+document.getElementById("demo2").innerHTML = evenumbers;
+
+// reduce()
+// Accumulates or reduces the elements of an array to a single value. It iterates over each element of the array. applying a callback function that you provide, and accumulates the results.
+
+const numbers2 = [ 1, 2, 3, 4, 5];
+const sum = numbers2.reduce( function (accumulator, currentValue){
+    return accumulator + currentValue;
+}, 0);
+document.getElementById("demo3").innerHTML = sum;
+
+// finds()
+// Return the first element in an array that satisfies a given condition. It stops iterating once the first matching element is found.
+
+const numbers3 = [ 1, 2, 3, 4, 5];
+
+const found = numbers3.find((element)=>{
+    return element > 2;
+});
+
+document.getElementById("demo4").innerHTML = found;
+
+</script>
+</html>
